@@ -28,6 +28,7 @@ export default [
             }),
             external(),
             resolve()
-        ]
+        ],
+        external: ['react', 'react-dom', 'prop-types'],
     }
 ];
