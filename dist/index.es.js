@@ -1176,7 +1176,9 @@ function Modal({
     return function cleanup() {
       document.body.removeEventListener("keydown", closeOnEscape);
     };
-  }, []);
+  }, []); // We use react transition in order to remove the modal's code when it is not displayed
+  // and we use a portal to avoid weird things that can break the css of modal's parent
+
   return /*#__PURE__*/ReactDOM.createPortal( /*#__PURE__*/React.createElement(CSSTransition$1, {
     in: show,
     unmountOnExit: true,
@@ -1201,7 +1203,7 @@ function Modal({
   }, /*#__PURE__*/React.createElement("button", {
     onClick: onClose,
     className: "close"
-  }))))), document.getElementById("root"));
+  }))))), document.body);
 }
 
 export { Modal };

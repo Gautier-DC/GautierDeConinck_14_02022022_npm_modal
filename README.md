@@ -24,18 +24,19 @@ In your project, run the following command :
 
 So now you have access to the modal component, you can add it to your project, for example like that :
 
-```<div className="App">
-        <button onClick={() => setShow(true)}>Show Modal</button>
-        <Modal title="New Modal" onClose={() => setShow(false)} show={show}>
-            <p>Modal incredible content 👽</p>
-        </Modal>
-    </div>
+```
+<div className="App">
+    <button onClick={() => setShow(true)}>Show Modal</button>
+    <Modal title="New Modal" onClose={() => setShow(false)} show={show}>
+        <p>Modal incredible content 👽</p>
+    </Modal>
+</div>
 ```
 
 So you can custom Modal with the title props and in the children part you can put anything you want: simple paragraph, formular, images, button...
 
 **One last important thing :**
-you need to define the following useState `const [show, setShow] = useState(false);` where you use the component in order to make it work.
+you need to define the following useState `const [show, setShow] = useState(false)` where you use the component in order to make it work.
 Without it you will not be abble to display the modal !
 
 ## Used Technologies / Dependencies
