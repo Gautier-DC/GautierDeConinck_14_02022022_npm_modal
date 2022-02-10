@@ -17,14 +17,17 @@ export default function Modal({ show, title, children, onClose }) {
       document.body.removeEventListener("keydown", closeOnEscape);
     };
   }, []);
-
+  // We use react transition in order to remove the modal's code when it is not displayed
+  // and we use a portal to avoid weird things that can break the css of modal's parent
   return ReactDOM.createPortal(
     <CSSTransition in={show} unmountOnExit timeout={{ enter: 0, exit: 300 }}>
       <div className="modal" onClick={onClose}>
         <div className="modal-content" onClick={(e) => e.stopPropagation()}>
-          {title && <div className="modal-header">
-            <h4 className="modal-title">{title}</h4>
-          </div>}
+          {title && (
+            <div className="modal-header">
+              <h4 className="modal-title">{title}</h4>
+            </div>
+          )}
           <div className="modal-body">{children}</div>
           <div className="modal-footer">
             <button onClick={onClose} className="close"></button>
@@ -32,6 +35,6 @@ export default function Modal({ show, title, children, onClose }) {
         </div>
       </div>
     </CSSTransition>,
-    document.getElementById("root")
+    document.body
   );
 }

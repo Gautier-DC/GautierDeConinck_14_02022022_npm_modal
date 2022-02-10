@@ -1,7 +1,7 @@
 {
   "name": "gdc-component-modal",
-  "version": "1.0.2",
-  "description": "simple component to use a modal",
+  "version": "1.0.3",
+  "description": "Package of a simple modal component that you can use easily in your projects by customize title props and children contents.",
   "main": "dist/index.js",
   "module": "dist/index.es.js",
   "scripts": {
@@ -10,8 +10,17 @@
     "build-storybook": "build-storybook",
     "build-lib": "rollup -c"
   },
+  "keywords": [
+    "react",
+    "modal",
+    "component"
+  ],
   "author": "Gautier DE CONINCK",
-  "license": "ISC",
+  "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Gautier-DC/GautierDeConinck_14_02022022_npm_modal.git"
+  },
   "devDependencies": {
     "@babel/core": "^7.17.0",
     "@babel/preset-react": "^7.16.7",
